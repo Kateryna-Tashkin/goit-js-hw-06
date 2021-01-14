@@ -1,15 +1,13 @@
-const Account = function (login, email) {
-  this.login = login;
-  this.email = email;
-};
-Account.prototype.getInfo = function () {
-  console.log(`Login: ${this.login}, Email: ${this.email}`); // function
-};
+import users from './users.js';
 
-const mango = new Account('Mangozedog', 'mango@dog.woof');
+// ЗАДАНИЕ 1
+const getUserNames = users => users.map(user => user.name);
 
-mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
+console.log(getUserNames(users));
+// [ 'Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony' ]
 
-const poly = new Account('Poly', 'poly@mail.com');
+// ЗАДАНИЕ 2
+const getUsersWithEyeColor = (users, color) =>
+  users.filter(user => user.eyeColor === color);
 
-poly.getInfo(); // Login: Poly, Email: poly@mail.com
+console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
